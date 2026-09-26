@@ -2,6 +2,7 @@
 #include <stdlib.h>
 
 #include "AST.h"
+#include "Interpreter.h"
 #include "Lexer.h"
 #include "Parser.h"
 
@@ -25,7 +26,7 @@ int main(int argc, char *argv[]) {
 
   ASTNode *tree = parse();
 
-  ast_print(tree, 0);
+  interpret(tree);
 
   ast_free(tree);
 
